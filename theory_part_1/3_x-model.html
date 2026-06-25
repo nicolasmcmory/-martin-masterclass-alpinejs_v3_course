@@ -9,11 +9,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-      rel="stylesheet" />
-    <link
       rel="stylesheet"
-      href="../css/styles.css" />
+      href="../css/output.css" />
     <script
       defer
       src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -66,7 +63,7 @@
               x-model="myInput"
               class="shadow p-1 border border-1 rounded"
               type="text" />
-            <span x-text="'Output: ' + myInput">Output: </span>
+            <span x-text="'Output:' + myInput"></span>
           </section>
 
           <!-- Example 2 -->
@@ -75,14 +72,16 @@
           </p>
           <section
             x-data="{
-            myValue : 'start'
+            myValue : 'My Input'
           }">
             <input
               x-model="myValue"
+              :value="myValue"
               class="shadow p-1 border border-1 rounded"
               type="text" />
             <input
               x-model="myValue"
+              :value="myValue"
               class="shadow p-1 border border-1 rounded"
               type="text" />
           </section>
@@ -94,16 +93,14 @@
           </p>
           <section
             x-data="{
-                    myColor: 'gray',
-                    selectClasses : 'h-full p-2 rounded ml-3 border border-gray-900 text-white focus:outline-none '
-                }"
+              myColor:'gray'
+
+            }"
             class="flex">
             <div
-              :class="'bg-' + myColor + '-600'"
-              style="height: 5rem; width: 5rem; border: 1px solid #555"></div>
-            <select
-              x-model="myColor"
-              :class="selectClasses + ' bg-' + myColor + '-600'">
+              style="height: 5rem; width: 5rem; border: 1px solid #555"
+              :class="`bg-${myColor}-600`"></div>
+            <select>
               <option value="gray">Select color</option>
               <option>green</option>
               <option>blue</option>
