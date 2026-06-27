@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Force-generate the dynamic color classes used by Alpine's x-model/x-bind */
+@source inline("bg-gray-500 bg-gray-300 bg-green-600 bg-blue-600 bg-red-600");
+
 h1 {
   font-size: 2rem;
   margin: 0.7rem 0;
